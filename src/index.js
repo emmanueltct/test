@@ -7,7 +7,9 @@ import car_router from './routes/car.routes';
 import order_router from './routes/order.routes';
 const app=express();
 app.use(bodyparser.json());
-
+app.get('/', (req,res){
+        res.send('hello automart');
+        });
 app.use('/api/v1/auth', user_router);
 app.use('/api/v1/auth/login', login_router);
 app.use('/api/v1/car', car_router);
